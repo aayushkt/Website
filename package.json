@@ -4,7 +4,7 @@
   "description": "Aayushkt's personal website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Khitpit/Website/issues"
   },
-  "homepage": "https://github.com/Khitpit/Website#readme"
+  "homepage": "https://github.com/Khitpit/Website#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
