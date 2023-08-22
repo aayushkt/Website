@@ -8,6 +8,7 @@
         <meta name="author" content="Aayush Singh (aayushkt)">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="main.css">
         <title>Aayush Singh</title>
         
@@ -15,8 +16,8 @@
     <body>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <!-- <script src="aos.js"></script>
-        <script>AOS.init();</script> -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init({duration: 1000});</script>
         
         <canvas id="constellation"></canvas>
         <div id="Home">    
@@ -32,7 +33,7 @@
                 </div>
             </nav>
 
-            <div class="flex-container" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
+            <div class="flex-container" data-aos-duration="3000" data-aos-delay="300" data-aos="flip-up" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
                 <div style="font-size: 10vh;">A</div>
                 <div style="font-size: 10vh">A</div>
                 <div style="font-size: 10vh">Y</div>
@@ -40,7 +41,7 @@
                 <div style="font-size: 10vh">S</div>
                 <div style="font-size: 10vh">H</div>
             </div>
-            <div class="flex-container" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
+            <div class="flex-container" data-aos-duration="3000" data-aos-delay="300" data-aos="flip-down" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
                 <div style="font-size: 10vh">S</div>
                 <div style="font-size: 10vh">I</div>
                 <div style="font-size: 10vh">N</div>
@@ -51,17 +52,17 @@
 
         <div class="theWholeThing" style="display: flex; row-gap: 20vh; flex-direction: column;">
             <div id="AboutMe" style="display: flex; width: 100vw; align-items: center; justify-content: center; flex-direction: column;">
-                <div style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">About Me</div>
-                <div class="card bg-dark-subtle" style="opacity: 0.9;">
+                <div data-aos="fade-left" style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">About Me</div>
+                <div class="card bg-black" data-aos="fade-right" style="opacity: 0.9;">
                     <div class="row">
                         <div class="col-md-4">
                             <img src="profilepic.jpeg" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title">About Me</h1>
+                                <h1 class="card-title">thats what i look like</h1>
                                 <p class="card-text">i write code and stuff i guess</p>
-                                <p class="card-text"><small class="text-body-secondary">it's p cool man</small></p>
+                                <p class="card-text"><small class="text-body-secondary">i made the whole background orange thing pls hire me</small></p>
                             </div>
                         </div>
                     </div>
@@ -69,17 +70,17 @@
             </div>
             
             <div id="PersonalProjects" style="display: flex; width: 100vw; align-items: center; justify-content: center; flex-direction: column;">
-                <div style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">Personal Projects</div>
-                <div class="card bg-dark-subtle" style="opacity: 0.9;">
+                <div data-aos="fade-left" style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">Personal Projects</div>
+                <div class="card bg-black" data-aos="fade-right" style="opacity: 0.9;">
                     <div class="row">
                         <div class="col-md-4">
                             <img src="profilepic.jpeg" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title">here's some shit i did</h1>
-                                <p class="card-text">i think its p cool</p>
-                                <p class="card-text"><small class="text-body-secondary">pls hire me</small></p>
+                                <h1 class="card-title">i ran out of pictures so heres the same one again</h1>
+                                <p class="card-text">i only really have this one picture</p>
+                                <p class="card-text"><small class="text-body-secondary">i dont even look good</small></p>
                             </div>
                         </div>
                     </div>
@@ -87,17 +88,17 @@
             </div>
 
             <div id="Experience" style="display: flex; width: 100vw; align-items: center; justify-content: center; flex-direction: column;">
-                <div style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">Experience</div>
-                <div class="card bg-dark-subtle" style="opacity: 0.9;">
+                <div data-aos="fade-left" style="display: flex; width: 100vw; align-items: center; justify-content: center; font-size: 10vh;">Experience</div>
+                <div class="card bg-black" data-aos="fade-right" style="opacity: 0.9;">
                     <div class="row">
                         <div class="col-md-4">
                             <img src="profilepic.jpeg" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title">i had like an internship</h1>
-                                <p class="card-text">i started a company too tho</p>
-                                <p class="card-text"><small class="text-body-secondary">i need a job</small></p>
+                                <h1 class="card-title">need a job to get experience</h1>
+                                <p class="card-text">need experience to get a job</p>
+                                <p class="card-text"><small class="text-body-secondary">wtf is this picture bro</small></p>
                             </div>
                         </div>
                     </div>
