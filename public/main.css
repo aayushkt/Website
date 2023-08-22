@@ -1,0 +1,30 @@
+/* Set Z-indexes for all components so they render
+on top of the canvas*/
+#constellation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+#Home, #AboutMe, #PersonalProjects, #Experience {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    color: white;
+} 
+
+/* Hide scrollbar even harder on Firefox*/
+html {
+    scrollbar-width: none;
+}
