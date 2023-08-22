@@ -8,8 +8,8 @@ var canvas = document.getElementById('constellation'),
     particles = [],
     links = [],
     linkColor = '#f98948',
-    linkSpeed = 0.02,
-    linkFadeSpeed = 0.005,
+    linkSpeed = 0.01,
+    linkFadeSpeed = 0.01,
     maxLinks = 15;
     linkLineWidth = 2,
     mouse = { x: 0, y: 0 },
@@ -127,12 +127,13 @@ var Link = function(startVertex, endVertex) {
 	this.finished = 0.0;
     this.startVertex = startVertex;
     this.endVertex = endVertex;
-    this.alpha = 1.0;
+    this.alpha = Math.min(startVertex.opacity, endVertex.opacity);
     this.fadeSpeed = random(1.0, 1.2, true);
+    this.distance = Math.sqrt((this.endVertex.x - this.startVertex.x)**2 + (this.endVertex.y - this.startVertex.y)**2)
 };
 
 Link.prototype.render = function() {
-    temp = linkSpeed;
+    temp = linkSpeed / this.distance;
     if (this.finished < 1.0 - temp) {
         this.finished += temp;
     } else if (this.finished < 1.0 ){
