@@ -7,11 +7,6 @@ on top of the canvas*/
     background-color: black;
 }
 
-#Home, #AboutMe, #PersonalProjects, #Experience {
-    position: relative;
-    z-index: 1;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
     display: none;
@@ -26,4 +21,21 @@ body {
 /* Hide scrollbar even harder on Firefox*/
 html {
     scrollbar-width: none;
+}
+
+.sectionHeading {
+    display: flex; 
+    width: 100vw; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 10vh;
+}
+
+.section {
+    display: flex; 
+    width: 100vw; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    margin-top: 20vh;
 }
