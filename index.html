@@ -17,6 +17,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="public/main.js"></script>
         <script>AOS.init({duration: 1000});</script>
         
         <canvas id="constellation"></canvas>
@@ -36,8 +37,8 @@
                 </div>
                 <div class="openLink">
                     <a class="linkHeader" href="#PersonalProjects">Personal Projects</a>
-                    <a class="openLinkOption" href="#Chopstix">Chopstix</a>
-                    <a class="openLinkOption" href="#Website">Website</a>
+                    <a class="openLinkOption" onclick="scrollToCard('Chopstix')">Chopstix</a>
+                    <a class="openLinkOption" onclick="scrollToCard('Website')">Website</a>
                 </div>
             </div>
 
@@ -47,8 +48,8 @@
                 </div>
                 <div class="openLink">
                     <a class="linkHeader" href="#Experience">Experience</a>
-                    <a class="openLinkOption" href="#3DFS">3DFS</a>
-                    <a class="openLinkOption" href="#Moira">Moira Labs</a>
+                    <a class="openLinkOption" onclick="scrollToCard('3DFS')">3DFS</a>
+                    <a class="openLinkOption" onclick="scrollToCard('Moira')">Moira Labs</a>
                 </div>
             </div>
         </div>
@@ -72,50 +73,77 @@
         </div>
 
         <div class="section" id="AboutMe">
+            
             <div class="sectionHeading" data-aos="fade-left">About Me</div>
-            <div data-aos="fade-right" class="card">
-                <div class="cardDescription">
-                    <div>
-                        <h1>Website</h1>
-                        <p>Placeholder text</p>
+            
+            <div data-aos="fade-right" class="container-lg" card>
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>About Me</h1>
+                                <p>This is me</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img src="public/profilepic.jpeg">
             </div>
+        
         </div>
         
         <div class="section" id="PersonalProjects">
             
             <div class="sectionHeading" data-aos="fade-left">Personal Projects</div>
 
-            <div data-aos="fade-right" class="card" id="Chopstix">
-                <img src="public/profilepic.jpeg">
-                <div class="cardDescription">
-                    <div>
-                        <h1>Chopstix</h1>
-                        <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
-                        <!-- <p>Check it out! two buttons</p> -->
-                        <!-- Insert link to github and separate webpage here -->
+            <div data-aos="fade-right" class="container-lg" card id="Chopstix">
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>Chopstix</h1>
+                                <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
+                                <!-- <p>Check it out! two buttons</p> -->
+                                <!-- Insert link to github and separate webpage here -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div data-aos="fade-left" class="card" id="Website">
-                <div class="cardDescription">
-                    <div>
-                        <h1>Website</h1>
-                        <p>Placeholder text</p>
+            <div data-aos="fade-left" class="container-lg" card id="Website">
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>Website</h1>
+                                <p>Placeholder</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img src="public/profilepic.jpeg">
             </div>
 
-            <div data-aos="fade-right" class="card" id="LitBot">
-                <img src="public/profilepic.jpeg">
-                <div class="cardDescription">
-                    <div>
-                        <h1>LitBot</h1>
-                        <p>Placeholder text</p>
+            <div data-aos="fade-right" class="container-lg" id="LitBot" card>
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>LitBot</h1>
+                                <p>Placeholder</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,22 +154,34 @@
             
             <div class="sectionHeading" data-aos="fade-left">Experience</div>
             
-            <div data-aos="fade-right" class="card" id="3DFS">
-                <div class="cardDescription">
-                    <div>
-                        <h1>3DFS Technologies</h1>
-                        <p>Placeholder text</p>
+            <div data-aos="fade-right" class="container-lg" card id="3DFS">
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>3DFS</h1>
+                                <p>Placeholder</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img src="public/profilepic.jpeg">
             </div>
 
-            <div data-aos="fade-left" class="card" id="Moira">
-                <img src="public/profilepic.jpeg">
-                <div class="cardDescription">
-                    <div>
-                        <h1>Moira Labs</h1>
-                        <p>Placeholder text</p>
+            <div data-aos="fade-left" class="container-lg" card id="Moira">
+                <div class="row align-items-center">
+                    <div class="col-md-auto">
+                        <img src="public/profilepic.jpeg">
+                    </div>
+                    <div class="col">
+                        <div class="cardDescription">
+                            <div>
+                                <h1>Moira Labs</h1>
+                                <p>Placeholder</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

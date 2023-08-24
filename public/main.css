@@ -53,24 +53,20 @@ Each .card has one .cardImage-Left or .cardImage-Right
     margin-bottom: 5vh;
 }
 
-.card {
-    display: flex; 
-    flex-direction: row;
+[card] {
     background-color: black; 
     margin-bottom: 5vh; 
-    width: 50vw; 
     border-radius: 10px; 
-    overflow: hidden; 
-    align-items: center; 
     border: 2px solid #613F75; 
-    justify-content: flex-end;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .cardDescription {
     padding-left: 50px; 
     padding-right: 50px; 
+    padding-top: 10px;
     color: white;
-    flex-grow: 1;
 }
 
 .navheader {
@@ -78,7 +74,6 @@ Each .card has one .cardImage-Left or .cardImage-Right
     position: fixed; 
     top: 0; 
     left: 0; 
-    height: 8vh; 
     width: 100vw; 
     z-index: 2; 
     background-color: black; 
@@ -120,6 +115,10 @@ Each .card has one .cardImage-Left or .cardImage-Right
     display: flex; 
     flex-direction: column; 
     font-size: 3vh;
+}
+
+.navLink:hover ~ .section {
+    opacity: 0.5;
 }
 
 .openLinkOption {
