@@ -57,6 +57,7 @@ function init() {
     // Animation loop
     (function animloop(){
         requestAnimFrame(animloop);
+        resize();
         render();
     })();
 }
@@ -172,6 +173,11 @@ function spawnLinkFrom(startingParticle) {
         links.push(new Link(startingParticle, randParticle()));
     }
     
+}
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
 init();
