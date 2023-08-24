@@ -9,7 +9,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="public/main.css">
+        <link rel="stylesheet" href="main.css">
         <title>Aayush Singh</title>
         
     </head>
@@ -20,19 +20,40 @@
         <script>AOS.init({duration: 1000});</script>
         
         <canvas id="constellation"></canvas>
-        <div id="Home">    
-            <nav id = "nav" class="navbar navbar-expand-lg p-1" style="opacity: 1;">
-                <div class="container-fluid">
-                    <a class="navbar-brand fs-1" href="#Home" aria-current="page">Aayush Singh</a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <a class="nav-link fs-3" href="#AboutMe">About</a>
-                        <a class="nav-link fs-3" href="#PersonalProjects">Projects</a>
-                        <a class="nav-link fs-3" href="#Experience">Experience</a>
-                    </div>
+        <div class="navheader">
+            <div class="navLink">
+                <div class="closedLink">
+                    <a class="linkHeader" href="#AboutMe">About</a>
                 </div>
-            </nav>
+                <div class="openLink">
+                    <a class="linkHeader" href="#AboutMe">About</a>
+                </div>
+            </div>
 
+            <div class="navLink">
+                <div class="closedLink">
+                    <a class="linkHeader" href="#PersonalProjects">Personal Projects</a>
+                </div>
+                <div class="openLink">
+                    <a class="linkHeader" href="#PersonalProjects">Personal Projects</a>
+                    <a class="openLinkOption" href="#Chopstix">Chopstix</a>
+                    <a class="openLinkOption" href="#Website">Website</a>
+                </div>
+            </div>
+
+            <div class="navLink">
+                <div class="closedLink">
+                    <a class="linkHeader" href="#Experience">Experience</a>
+                </div>
+                <div class="openLink">
+                    <a class="linkHeader" href="#Experience">Experience</a>
+                    <a class="openLinkOption" href="#3DFS">3DFS</a>
+                    <a class="openLinkOption" href="#Moira">Moira Labs</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="Home">    
             <div class="flex-container" data-aos-duration="3000" data-aos-delay="300" data-aos="flip-up" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
                 <div style="font-size: 10vh;">A</div>
                 <div style="font-size: 10vh">A</div>
@@ -52,54 +73,49 @@
 
         <div class="section" id="AboutMe">
             <div class="sectionHeading" data-aos="fade-left">About Me</div>
-            <div class="card bg-black" data-aos="fade-right" style="opacity: 0.9;">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="public/profilepic.jpeg" class="img-fluid rounded-start">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h1 class="card-title">Placeholder Text</h1>
-                            <p class="card-text">Placeholder Text</p>
-                            <p class="card-text"><small class="text-body-secondary">Placeholder Text</small></p>
-                        </div>
+            <div data-aos="fade-right" class="card">
+                <div class="cardDescription">
+                    <div>
+                        <h1>Website</h1>
+                        <p>Placeholder text</p>
                     </div>
                 </div>
+                <img src="profilepic.jpeg">
             </div>
         </div>
         
         <div class="section" id="PersonalProjects">
             
             <div class="sectionHeading" data-aos="fade-left">Personal Projects</div>
-            
-            <div class="card bg-black text-center mb-5" data-aos="fade-right" style="width: 50vw; opacity: 0.9;">
-                <div class="row align-items-center">
-                    <div class="col" style="padding-left: 50px; padding-right: 50px;">
-                        <div>
-                            <h1>Chopstix</h1>
-                            <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
-                            <!-- <p>Check it out! two buttons</p> -->
-                            <!-- Insert link to github and separate webpage here -->
-                        </div>
-                    </div>
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg" class="img-fluid rounded-start">
+
+            <div data-aos="fade-right" class="card" id="Chopstix">
+                <img src="profilepic.jpeg">
+                <div class="cardDescription">
+                    <div>
+                        <h1>Chopstix</h1>
+                        <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
+                        <!-- <p>Check it out! two buttons</p> -->
+                        <!-- Insert link to github and separate webpage here -->
                     </div>
                 </div>
             </div>
 
-            <div class="card bg-black text-center mb-5" data-aos="fade-right" style="width: 50vw; opacity: 0.9;">
-                <div class="row align-items-center">
-                    <div class="col" style="padding-left: 50px; padding-right: 50px;">
-                        <div>
-                            <h1>Chopstix</h1>
-                            <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
-                            <!-- <p>Check it out! two buttons</p> -->
-                            <!-- Insert link to github and separate webpage here -->
-                        </div>
+            <div data-aos="fade-left" class="card" id="Website">
+                <div class="cardDescription">
+                    <div>
+                        <h1>Website</h1>
+                        <p>Placeholder text</p>
                     </div>
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg" class="img-fluid rounded-start">
+                </div>
+                <img src="profilepic.jpeg">
+            </div>
+
+            <div data-aos="fade-right" class="card" id="LitBot">
+                <img src="profilepic.jpeg">
+                <div class="cardDescription">
+                    <div>
+                        <h1>LitBot</h1>
+                        <p>Placeholder text</p>
                     </div>
                 </div>
             </div>
@@ -107,25 +123,33 @@
         </div>
 
         <div class="section" id="Experience">
+            
             <div class="sectionHeading" data-aos="fade-left">Experience</div>
-            <div class="card bg-black" data-aos="fade-right" style="opacity: 0.9;">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="public/profilepic.jpeg" class="img-fluid rounded-start">
+            
+            <div data-aos="fade-right" class="card" id="3DFS">
+                <div class="cardDescription">
+                    <div>
+                        <h1>3DFS Technologies</h1>
+                        <p>Placeholder text</p>
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h1 class="card-title">Placeholder Text</h1>
-                            <p class="card-text">Placeholder Text</p>
-                            <p class="card-text"><small class="text-body-secondary">Placeholder Text</small></p>
-                        </div>
+                </div>
+                <img src="profilepic.jpeg">
+            </div>
+
+            <div data-aos="fade-left" class="card" id="Moira">
+                <img src="profilepic.jpeg">
+                <div class="cardDescription">
+                    <div>
+                        <h1>Moira Labs</h1>
+                        <p>Placeholder text</p>
                     </div>
                 </div>
             </div>
+        
         </div>
 
         <div class="section" id="JUSTFORSPACING"></div>
 
-        <script src="public/constellation.js"></script>
+        <script src="constellation.js"></script>
     </body>
 </html>
