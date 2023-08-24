@@ -17,21 +17,14 @@ var canvas = document.getElementById('constellation'),
     mouseMoved = false;
 
 function init() {
-    if ('ontouchstart' in document.documentElement && window.DeviceOrientationEvent) {
-		window.addEventListener('deviceorientation', function(e) {
-			mouse.x = (canvas.clientWidth / 2) - ((e.gamma / 90) * (canvas.clientWidth / 2) * 2);
-			mouse.y = (canvas.clientHeight / 2) - ((e.beta / 90) * (canvas.clientHeight / 2) * 2);
-		}, true);
-	}
-	else {
-		document.body.addEventListener('mousemove', function(e) {
-            lastMouse.x = mouse.x;
-            lastMouse.y = mouse.y;
-			mouse.x = e.clientX;
-			mouse.y = e.clientY;
-            mouseMoved = true;
-		});
-	}
+
+    document.body.addEventListener('mousemove', function(e) {
+        lastMouse.x = mouse.x;
+        lastMouse.y = mouse.y;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouseMoved = true;
+    });
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
