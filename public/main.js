@@ -1,6 +1,6 @@
 /*
 
-The following script does four separate tasks:
+The following script does five separate tasks:
 
 1) Defines the 'scrollToCard' method which allows the links in the
 navbar to scroll to the center of the card (instead of scrolling too
@@ -24,7 +24,12 @@ the DOM whose top is below 2/3rds the screen height (so if its top is
 peeking just above the bottom of the page, it still qualifies). If the 
 section is the last one (technically second last since theres an empty
 section for spacing at the bottom), then the img is flipped to scroll back
-up.
+up. The scroll button also does not show up on smaller screens.
+
+5) Looks at the height of the navbar and sets the image icons in the upper
+right corner to be equal, so they look like they're in the navbar (they are
+actually separate elements fixed to the top right corner). These elements
+also do not render for smallscreens.
 
 */
 
@@ -88,6 +93,11 @@ AOS.init(duration);
 
 //////////////////////////////////////////////////////////////////////////////////// SECTION 4
 
+if (window.innerWidth < 800) {
+    let scrollHelper = document.querySelector('.scrollHelper');
+    scrollHelper.setAttribute('style', 'display: none;')
+}
+
 isUpsideDown = false; // keeps track if arrow is pointing up or down
 // pointing up means it's upside down
 function goToNextSection() {
@@ -119,3 +129,13 @@ function goToNextSection() {
         
     }
 }
+
+//////////////////////////////////////////////////////////////////////////////////// SECTION 5
+
+let navHeight = document.querySelector('.navheader').getBoundingClientRect().height;
+let imgHeader = document.querySelector('.navImgs');
+let heightString = 'height: ' + navHeight + 'px;'
+if (window.innerWidth < 800){
+    heightString = 'display: none;'
+}
+imgHeader.setAttribute('style', heightString);

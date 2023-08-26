@@ -15,6 +15,7 @@ Remove all horizontal scrolling, and scrollbars
 */
 body::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow-x: none;
 }
 
 body {
@@ -97,6 +98,7 @@ Below is all the CSS and styling for the navbar elements
     align-items: baseline; 
     gap: 10px; 
     border-bottom: 2px solid #eb5e28;
+    flex-wrap: wrap;
 }
 
 .closedLink {
@@ -160,4 +162,24 @@ Below is all the CSS and styling for the navbar elements
     color: #F98948;
     width: 50px;
     height: 50px;
+}
+
+.navImgs {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: row-reverse;
+    padding: 15px;
+    z-index: 5;
+    height: 1vh;
+    column-gap: 15px;
+}
+
+.navImgElement {
+    max-height: 100%;
+}
+
+.navImgElement:hover {
+    cursor: pointer;
 }
