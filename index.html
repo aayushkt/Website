@@ -17,7 +17,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="public/main.js"></script>
         
         <canvas id="constellation"></canvas>
         <div class="navheader">
@@ -32,10 +31,10 @@
 
             <div class="navLink">
                 <div class="closedLink">
-                    <a class="linkHeader" href="#PersonalProjects">Personal Projects</a>
+                    <a class="linkHeader" href="#Projects">Projects</a>
                 </div>
                 <div class="openLink">
-                    <a class="linkHeader" href="#PersonalProjects">Personal Projects</a>
+                    <a class="linkHeader" href="#Projects">Projects</a>
                     <a class="openLinkOption" onclick="scrollToCard('Chopstix')">Chopstix</a>
                     <a class="openLinkOption" onclick="scrollToCard('Website')">Website</a>
                 </div>
@@ -54,7 +53,7 @@
         </div>
 
         <div id="Home">    
-            <div class="flex-container" data-aos-duration="3000" data-aos="flip-up" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
+            <div class="flex-container" name="name" data-aos="flip-up" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
                 <div style="font-size: 10vh;">A</div>
                 <div style="font-size: 10vh">A</div>
                 <div style="font-size: 10vh">Y</div>
@@ -62,7 +61,7 @@
                 <div style="font-size: 10vh">S</div>
                 <div style="font-size: 10vh">H</div>
             </div>
-            <div class="flex-container" data-aos-duration="3000" data-aos="flip-down" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
+            <div class="flex-container" name="name" data-aos="flip-down" style="display:flex; justify-content: space-around; height: 50vh; align-items: center;">
                 <div style="font-size: 10vh">S</div>
                 <div style="font-size: 10vh">I</div>
                 <div style="font-size: 10vh">N</div>
@@ -75,120 +74,83 @@
             
             <div class="sectionHeading" data-aos="fade-left">About Me</div>
             
-            <div data-aos="fade-right" class="container-lg" card>
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
+            <div class="container-lg" card>
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>About Me</h1>
+                        <p> Hi!</p>
                     </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>About Me</h1>
-                                <p>This is me</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="cardImage" src="public/profilepic.jpeg">
                 </div>
             </div>
         
         </div>
-        
-        <div class="section" id="PersonalProjects">
+
+        <div class="section" id="Portfolio">
             
-            <div class="sectionHeading" data-aos="fade-left">Personal Projects</div>
+            <div class="sectionHeading" data-aos="fade-left">My Portfolio</div>
 
-            <div data-aos="fade-right" class="container-lg" card id="Chopstix">
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
+            <div class="container-lg" card id="3DFS">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>3DFS - Software Engineer Intern</h1>
+                        <p class="cardSubHeading"> Jan - May 2022 [8 Months] </p>
+                        <p> I interned at 3DFS Technologies, a startup specializing in using software to correct electricity currents on the scale of nanoseconds. I used embedded programming techniques in C to write software that operates at these lightning fast speeds, meaning algorithm design and optimization were key. I implemented signal processing algorithms and security failsafes, and programmed directly into microprocessor memory for maximum performance. </p>
+                        <p> Alongside product development, I also implemented and designed SQL databases to manage company inventory. I created an HTML, browser-based front-end application for users to log into the databases and perform operations, which were forwarded to a custom python back-end I built for SQL optimization.</p>
                     </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>Chopstix</h1>
-                                <p>I embarked on an engaging project inspired by childhood memories of the 'Chopsticks' finger game. Finding no existing solutions, I independently applied linear algebra and graph traversal algorithms to formulate and solve challenges, resulting in an AI that consistently wins the game. This endeavor showcased my adeptness in both mathematical theory and practical application, while also potentially contributing to game theory, AI, and algorithmic domains. Sharing these findings with relevant communities could open avenues for further exploration and innovation.</p>
-                                <!-- <p>Check it out! two buttons</p> -->
-                                <!-- Insert link to github and separate webpage here -->
-                            </div>
-                        </div>
-                    </div>
+                    <img class="cardImage" src="public/logo-3dfs.jpg">
                 </div>
             </div>
 
-            <div data-aos="fade-left" class="container-lg" card id="Website">
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
+            <div class="container-lg" card id="Moira">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>Moira Labs - CoFounder, Software Engineer</h1>
+                        <p class="cardSubHeading"> Sep 2022 - Present [1 year] </p>
+                        <p>Started developing a blockchain based video game, which evolved into a LLC gaming studio called 'Moira Labs' with the help of two other Co-founders. Moira Labs was hand selected for Private Venture Group's exclusive startup accelerator program, and is now developing in stealth. More to come soon!</p>
+                        <p>At Moira Labs, I have designed, managed, and developed key elements of comany software. Being Project lead for one project involved merging pull requests, planning future features and systems, and working closely with a team of developers. I have also specialized in handling the cloud services used by the company, including configuring and launching multiple Amazon Web Services containers, such as S3 data buckets, SQL database instances, Cognito authorization pools, and more. </p>
                     </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>Website</h1>
-                                <p>Placeholder</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="cardImage" src="">
                 </div>
             </div>
 
-            <div data-aos="fade-right" class="container-lg" id="LitBot" card>
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
+            <div class="container-lg" card id="Chopstix">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>Chopstix</h1>
+                        <p>I would always play the classic finger game 'Chopsticks' (somtimes also called 'Sticks') as a kid, and so I decided to try solving it. It was a surprisingly difficult process! As far as I can see, no one has ever worked on this problem, so first I had to develop the algorithms and logic required for a perfect Chopsticks player. I independently proved, solved, and then implemented theorems from linear algebra and graph traversal algorithms to make an AI that wins every game without fail. For more info (and a sneak peek at all the cool math and algorithms), check out my Github!</p>
+                        <a class="btn" style="background-color: #F98948; color: black" href="https://github.com/Khitpit/Chopstix" role="button">Check out Chopstix AI on GitHub »</a>
                     </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>LitBot</h1>
-                                <p>Placeholder</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="cardImage" src="">
                 </div>
             </div>
 
         </div>
 
-        <div class="section" id="Experience">
+        <div class="section" id="Projects and Achievements">
             
-            <div class="sectionHeading" data-aos="fade-left">Experience</div>
-            
-            <div data-aos="fade-right" class="container-lg" card id="3DFS">
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
+            <div class="sectionHeading" data-aos="fade-left">Projects and Achievements</div>
+
+            <div class="container-lg" card id="ULA">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>Undergraduate Learning Assistant - UNC Math Department</h1>
+                        <p class="cardSubHeading">Aug 2020 - May 2021 [10 Months]</p>
+                        <p>I have a passion for all things math, and teaching is no exception. During my freshman year at UNC, I was able to work as an Undergraduate Learning Assistant with the UNC Math Department. I helped professors teach MATH 231 (Calculus of Functions) and MATH 110L (Algebra), to over 200+ students. I would talk to students during and after class to assess strengths and weaknesses, and create material to help students learn. I would record videos of practice problem solutions, and host group study sessions with students to work on problems together. I'm happy to say that I helped many students not only understand, but gain a newfound respect and passion for math. </p>
                     </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>3DFS</h1>
-                                <p>Placeholder</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="cardImage" src="public/UNC_Logo.png">
                 </div>
             </div>
 
-            <div data-aos="fade-left" class="container-lg" card id="Moira">
-                <div class="row align-items-center">
-                    <div class="col-md-auto">
-                        <img src="public/profilepic.jpeg">
-                    </div>
-                    <div class="col">
-                        <div class="cardDescription">
-                            <div>
-                                <h1>Moira Labs</h1>
-                                <p>Placeholder</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+
+            <p>RASPI, DRP, TriComm, Mail server, SMTP</p>
+
+
         </div>
 
         <div class="section" id="JUSTFORSPACING"></div>
 
         <script src="public/constellation.js"></script>
+        <script src="public/main.js"></script>
     </body>
 </html>
