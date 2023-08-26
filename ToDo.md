@@ -17,3 +17,4 @@ Here's all the source code for my website, available at http://aayushkt.com (hop
 - Play around with aos settings/animations
 - Remove the data-bs-theme tag from HTML element while keeping the text white
 - Eventually have separate webpages for a more detailed about section, Chopstix, Constellation.js, and more
+- Add a down scroll arrow to show people to scroll down from the landing page

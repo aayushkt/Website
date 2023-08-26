@@ -19,6 +19,7 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         
         <canvas id="constellation"></canvas>
+        <img class="scrollHelper" src="public/downarrowinsideacircle.png" onclick="goToNextSection()">
         <div class="navheader">
             <div class="navLink">
                 <div class="closedLink">
@@ -31,25 +32,33 @@
 
             <div class="navLink">
                 <div class="closedLink">
-                    <a class="linkHeader" href="#Projects">Projects</a>
+                    <a class="linkHeader" href="#Portfolio">Portfolio</a>
                 </div>
                 <div class="openLink">
-                    <a class="linkHeader" href="#Projects">Projects</a>
-                    <a class="openLinkOption" onclick="scrollToCard('Chopstix')">Chopstix</a>
-                    <a class="openLinkOption" onclick="scrollToCard('Website')">Website</a>
+                    <a class="linkHeader" href="#Portfolio">Projects</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('3DFS');event.preventDefault();">3DFS</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('Moira');event.preventDefault();">Moira</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('Chopstix');event.preventDefault();">Chopstix</a>
                 </div>
             </div>
 
             <div class="navLink">
                 <div class="closedLink">
-                    <a class="linkHeader" href="#Experience">Experience</a>
+                    <a class="linkHeader" href="#Projects">Projects</a>
                 </div>
                 <div class="openLink">
-                    <a class="linkHeader" href="#Experience">Experience</a>
-                    <a class="openLinkOption" onclick="scrollToCard('3DFS')">3DFS</a>
-                    <a class="openLinkOption" onclick="scrollToCard('Moira')">Moira Labs</a>
+                    <a class="linkHeader" href="#Projects">Projects</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('ULA');event.preventDefault();">Teaching</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('DRP');event.preventDefault();">Math Research</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('TriComm');event.preventDefault();">Data Modeling</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('RASPI');event.preventDefault();">Raspberry Pi</a>
+                    <a class="openLinkOption" href="#" onclick="scrollToCard('SMTP');event.preventDefault();">Mail Server</a>
                 </div>
             </div>
+
+            <!-- <div>
+                <img src="github-logo.png" style="object-fit: contain; justify-self: flex-end;">
+            </div> -->
         </div>
 
         <div id="Home">    
@@ -74,13 +83,13 @@
             
             <div class="display-1" sectionHeading data-aos="fade-left">About Me</div>
             
-            <div class="container-lg" card>
+            <div class="container-lg" card data-aos="fade-right">
                 <div class="cardBody">
+                    <img class="cardImage" src="public/profilepic.jpeg">
                     <div class="cardText">
                         <h1>About Me</h1>
                         <p> Hi!</p>
                     </div>
-                    <img class="cardImage" src="public/profilepic.jpeg">
                 </div>
             </div>
         
@@ -90,7 +99,7 @@
             
             <div class="display-1" sectionHeading data-aos="fade-left">My Portfolio</div>
 
-            <div class="container-lg" card id="3DFS">
+            <div class="container-lg" card data-aos="fade-right" id="3DFS">
                 <div class="cardBody">
                     <div class="cardText">
                         <h1>3DFS - Software Engineer Intern</h1>
@@ -102,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="container-lg" card id="Moira">
+            <div class="container-lg" card data-aos="fade-left" id="Moira">
                 <div class="cardBody">
                     <div class="cardText">
                         <h1>Moira Labs - CoFounder, Software Engineer</h1>
@@ -110,18 +119,17 @@
                         <p>Started developing a blockchain based video game, which evolved into a LLC gaming studio called 'Moira Labs' with the help of two other Co-founders. Moira Labs was hand selected for Private Venture Group's exclusive startup accelerator program, and is now developing in stealth. More to come soon!</p>
                         <p>At Moira Labs, I have designed, managed, and developed key elements of comany software. Being Project lead for one project involved merging pull requests, planning future features and systems, and working closely with a team of developers. I have also specialized in handling the cloud services used by the company, including configuring and launching multiple Amazon Web Services containers, such as S3 data buckets, SQL database instances, Cognito authorization pools, and more. </p>
                     </div>
-                    <img class="cardImage" src="">
                 </div>
             </div>
 
-            <div class="container-lg" card id="Chopstix">
+            <div class="container-lg" card data-aos="fade-right" id="Chopstix">
                 <div class="cardBody">
+                    <img class="cardImage" src="public/chopstix.jpg">
                     <div class="cardText">
                         <h1>Chopstix</h1>
                         <p>I would always play the classic finger game 'Chopsticks' (somtimes also called 'Sticks') as a kid, and so I decided to try solving it. It was a surprisingly difficult process! As far as I can see, no one has ever worked on this problem, so first I had to develop the algorithms and logic required for a perfect Chopsticks player. I independently proved, solved, and then implemented theorems from linear algebra and graph traversal algorithms to make an AI that wins every game without fail. For more info (and a sneak peek at all the cool math and algorithms), check out my Github!</p>
                         <a class="btn" style="background-color: #F98948; color: black" href="https://github.com/Khitpit/Chopstix" role="button">Check out Chopstix AI on GitHub »</a>
                     </div>
-                    <img class="cardImage" src="">
                 </div>
             </div>
 
@@ -131,7 +139,7 @@
             
             <div class="display-1" sectionHeading data-aos="fade-left">Projects and Achievements</div>
 
-            <div class="container-lg" card id="ULA">
+            <div class="container-lg" card data-aos="fade-right" id="ULA">
                 <div class="cardBody">
                     <div class="cardText">
                         <h1>Undergraduate Learning Assistant - UNC Math Department</h1>
@@ -142,9 +150,47 @@
                 </div>
             </div>
 
+            <div class="container-lg" card data-aos="fade-left" id="DRP">
+                <div class="cardBody">
+                    <img class="cardImage" src="public/DRP_image.png">
+                    <div class="cardText">
+                        <h1>Directed Reading Program - UNC Math</h1>
+                        <p class="cardSubHeading">Jan 2020 - May 2020 [5 Months]</p>
+                        <p> I was individually asked by two of my professors to join them under UNC's directed reading program, in order to conduct research into advanced math topics. We ended up researching formal logic systems and Godel's Incompleteness Theorem over the course of the semester. The research concluded with a presentation to the UNC Math Department on our findings. </p>
+                    </div>
+                </div>
+            </div>
 
-            <p>RASPI, DRP, TriComm, Mail server, SMTP</p>
+            <div class="container-lg" card data-aos="fade-right" id="TriComm">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>Duke University Math Modeling Competition</h1>
+                        <p> Participated in Duke University's <a href="https://sites.duke.edu/tricomm/">Triangle Competition in Math Modeling</a>. Formed a team with one other undergraduate student, and used math modeling and data science techniques to analyze a given data set. Using various different techniques, from simple linear regression, to predictive algorithms, we extrapolated sleeping patterns for smart watch users based on their step count record data. We ended up securing 7th place in the competition overall, winning honorable mention slots, as well as prizes.</p>
+                    </div>
+                    <img class="cardImage" src="public/duke-logo.png">
+                </div>
+            </div>
 
+            <div class="container-lg" card data-aos="fade-left" id="RASPI">
+                <div class="cardBody">
+                    <img class="cardImage" src="public/raspi-logo.jpg">
+                    <div class="cardText">
+                        <h1>Raspberry Pi IOT Server</h1>
+                        <p> I also love to build my own personal projects using hardware on my Raspberry Pi. One recent project I built was a model solar panel mounted light detector: I outfitted the Rasberry Pi with light sensors and some servo motors and programmed it to maximise the solar panel output by facing the light! Currently the Raspberry Pi is running an open source java program which allows it to run as a LAN Minecraft server.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-lg" card data-aos="fade-right" id="SMTP">
+                <div class="cardBody">
+                    <div class="cardText">
+                        <h1>Custom Built Email Server</h1>
+                        <p> During the time I spent studying network protocols, I also implemented my own version of the Simple Mail Transfer Protocol (SMTP for short). SMTP is one of the oldest protocols out there, with an RFC (the official document specifying the protocol) that dates back to 1982, the early days of the internet. Back then, passwords and files would often be sent plaintext, unencryped, over the internet - there was nothing stopping someone from simply checking other people's email (kind of like actual mail)! To get a better understanding of implementing official RFC protocols, and of mail servers in general, I decided to implement my own version of SMTP, compliant with all the protocol standards outlined in the official RFC document in python.</p>
+                        <a class="btn" style="background-color: #F98948; color: black" href="https://github.com/Khitpit/PythonSMTP" role="button">Check out my SMTP server code on GitHub »</a>
+                    </div>
+                    <img class="cardImage" src="public/smtp-logo.png">
+                </div>
+            </div>
 
         </div>
 

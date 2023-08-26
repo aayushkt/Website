@@ -151,3 +151,13 @@ Below is all the CSS and styling for the navbar elements
     text-decoration: none;
     color: white;
 }
+
+.scrollHelper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 5;
+    color: #F98948;
+    width: 50px;
+    height: 50px;
+}

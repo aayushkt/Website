@@ -1,5 +1,5 @@
 // This is a javascript implementation of my chopstix project
-// which can be found at https://github.com/aayushkt/Chopstix
+// which can be found at https://github.com/Khitpit/Chopstix
 
 
 import { zeros, lusolve } from 'mathjs';
