@@ -6,7 +6,7 @@ behind everything properly
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: var(--blackColor);
     z-index: 0;
 }
 
@@ -49,6 +49,7 @@ Each .cardText may have one .cardSubHeading
     flex-direction: column;
     padding-top: 20vh;
     z-index: 1;
+    color: var(--whiteColor);
 }
 
 [sectionHeading] {
@@ -56,10 +57,10 @@ Each .cardText may have one .cardSubHeading
 }
 
 [card] {
-    background-color: black; 
+    background-color: var(--blackColor); 
     margin-bottom: 5vh; 
     border-radius: 10px; 
-    border: 2px solid #F98948; 
+    border: 2px solid var(--secondaryColor); 
     margin-left: 20px;
     margin-right: 20px;
     z-index: 1;
@@ -73,15 +74,25 @@ Each .cardText may have one .cardSubHeading
 
 .cardText {
     padding: 10px 10px 10px 10px;
-    color: white;
+    color: var(--whiteColor);
 }
 
 .cardSubHeading {
-    color: #746f72;
+    color: var(--secondaryColor);
 }
 
 .cardImage {
     max-width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nameDisplay {
+    display:flex; 
+    justify-content: space-around; 
+    height: 50vh; 
+    align-items: center;
+    color: var(--whiteColor);
 }
 
 /*
@@ -94,11 +105,11 @@ Below is all the CSS and styling for the navbar elements
     left: 0; 
     width: 100vw; 
     z-index: 2; 
-    background-color: black; 
+    background-color: var(--blackColor); 
     padding: 10px; 
     align-items: baseline; 
     gap: 10px; 
-    border-bottom: 2px solid #eb5e28;
+    border-bottom: 2px solid var(--orangeColor);
     flex-wrap: wrap;
 }
 
@@ -113,15 +124,15 @@ Below is all the CSS and styling for the navbar elements
 }
 
 .navLink {
-    background-color: black;
-    border: 2px solid black;
+    background-color: var(--blackColor);
+    border: 2px solid var(--blackColor);
     border-radius: 10px;
     padding: 5px;
 }
 
 .navLink:hover {
-    background-color: black;
-    border: 2px solid #F98948;
+    background-color: var(--blackColor);
+    border: 2px solid var(--orangeColor);
     border-radius: 10px;
     padding: 5px;
 }
@@ -141,18 +152,18 @@ Below is all the CSS and styling for the navbar elements
 }
 
 .openLinkOption {
-    color: #746f72;
+    color: var(--fadedColor);
     font-size: 2vh;
     text-decoration: none;
 }
 
 .openLinkOption:hover {
-    color: white;
+    color: var(--whiteColor);
 }
 
 .linkHeader {
     text-decoration: none;
-    color: white;
+    color: var(--whiteColor);
 }
 
 .scrollHelper {
@@ -160,7 +171,7 @@ Below is all the CSS and styling for the navbar elements
     bottom: 10px;
     right: 10px;
     z-index: 5;
-    color: #F98948;
+    color: var(--orangeColor);
     width: 50px;
     height: 50px;
 }
@@ -171,10 +182,8 @@ Below is all the CSS and styling for the navbar elements
     top: 0;
     right: 0;
     flex-direction: row-reverse;
-    padding: 15px;
     z-index: 5;
-    height: 1vh;
-    column-gap: 15px;
+    column-gap: 20px;
 }
 
 .navImgElement {
@@ -183,4 +192,11 @@ Below is all the CSS and styling for the navbar elements
 
 .navImgElement:hover {
     cursor: pointer;
+}
+
+:root {
+    --orangeColor: #F98948;
+    --blackColor: #0f1a20;
+    --whiteColor: #F9EAE1;
+    --secondaryColor: #89608E;
 }

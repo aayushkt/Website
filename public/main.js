@@ -84,7 +84,7 @@ if (window.innerWidth < 800){
     duration = { duration: 0};
 } else {
     duration = { duration: 1000};    
-    var names = document.getElementsByName('name');
+    var names = document.querySelectorAll('.nameDisplay');
     names.forEach(name => {
         name.setAttribute('data-aos-duration', 3000);
     })
