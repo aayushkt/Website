@@ -132,10 +132,16 @@ function goToNextSection() {
 
 //////////////////////////////////////////////////////////////////////////////////// SECTION 5
 
-let navHeight = document.querySelector('.navheader').getBoundingClientRect().height;
-let imgHeader = document.querySelector('.navImgs');
-let heightString = 'height: ' + navHeight + 'px;'
-if (window.innerWidth < 800){
-    heightString = 'display: none;'
+if (window.innerWidth > 800){
+    let navHeight = document.querySelector('.navheader').getBoundingClientRect().height;
+
+    let imgsBox = document.querySelector('.navImgs');
+    let heightString = 'display: flex; height: ' + navHeight + 'px;'
+    imgsBox.setAttribute('style', heightString);
+    
+    let imgs = document.querySelectorAll('.imgWrap');
+    heightString = 'display: flex; height: ' + navHeight*0.9 + 'px;'
+    imgs.forEach(img => {
+        img.setAttribute('style', heightString);
+    })
 }
-imgHeader.setAttribute('style', heightString);
