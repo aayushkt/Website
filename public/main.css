@@ -85,6 +85,7 @@ Each .cardText may have one .cardSubHeading
     max-width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-radius: 15px;
 }
 
 .nameDisplay {
