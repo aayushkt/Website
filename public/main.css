@@ -174,6 +174,7 @@ Below is all the CSS and styling for the navbar elements
     color: var(--orangeColor);
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 .navImgs {
