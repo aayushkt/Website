@@ -10,24 +10,24 @@ import { zeros, lusolve } from 'mathjs';
 // of the state with index 17.
 //
 // These get initialized during initializeGraphEdges()
-let parents = null;
-let children = null;
+let parents = undefined;
+let children = undefined;
 
 // This is a list representing the type of state each 
 // state is. See classifyStates() for more info.
 //
 // This field is initialized during classifyStates()
-let classifiedStates = null;
+let classifiedStates = undefined;
 
 // This is a list which contains the final 'rank' (how
 // good or bad a state is) for every state.
 //
 // This field is initialized during computeRanks()
-let ranks = null;
+let ranks = undefined;
 
 // This field is a number representing how many
 // states there are in the game.
-let stateCount = null;
+let stateCount = undefined;
 
 // This field represents the total number of fingers
 // players have on each hand. Default value is 5.
@@ -41,16 +41,12 @@ let handSet = [];
 
 // This field represents whether players are allowed to
 // 'switch' or rearrange fingers between hands on their turn
-//
-// Default value is True.
 let switchingAllowed = true;
 
 // This field represents whether players are allowed to 
 // 'switch' or rearrange their fingers into the same configuration
 // on their turn, effectively skipping it. This variable is ignored
 // if switchingAllowed is set to False.
-//
-// Default value is False
 let skippingAllowed = false;
 
 /*
@@ -62,13 +58,13 @@ calculations do not need to be rerun multiple times.
 function init(numOfFingers=5, switchingAllowed=true, skippingAllowed=false) {
     /*
     Executes the chopstix algorithm in four distinct steps:
-    1) Variables are initialized, and states are assigned indexes (nodes in the graph)
+    1) Rules are initialized, and states are assigned indexes (nodes in the graph)
     2) The graph edges are filled out; states are connected to each other according to settings
     3) States are classified into specific types for computation purposes
     4) Using the classifications, the rank for each state is computed
     */
 
-    // Fields are initialized, algorithm is ready to be run
+    // Rules are initialized, algorithm is ready to be run
     numOfFingers = numOfFingers;
     switchingAllowed = switchingAllowed;
     handSet = generateHandSet();
@@ -78,7 +74,7 @@ function init(numOfFingers=5, switchingAllowed=true, skippingAllowed=false) {
     children = [];
     for (let i = 0; i < stateCount; ++i) {
         parents.push([]);
-        children.push([])
+        children.push([]);
     }
     
     // Now all the states will be connected up to one another
@@ -90,12 +86,12 @@ function init(numOfFingers=5, switchingAllowed=true, skippingAllowed=false) {
     // Now that the graph states have all been connected together
     // properly, we can classify which states are of what type.
     // The results are stored in the field classifiedStates
-    classifyStates()
+    classifyStates();
 
     // Now we compute the ranks of each state, using the classifications
     // stored in classifiedStates. The result of this is stored in 
     // the field ranks
-    computeRanks()
+    computeRanks();
 
 }
 
@@ -107,24 +103,24 @@ function generateHandSet(){
             handSet.push([x, y]);
         }
     }
-    return handSet
+    return handSet;
 }
 
 function stateToIndex(state){
     //Given a state in ((a, b), (c, d)) notation, returns the index number of that state
-    let n = numOfFingers
-    let a = state[0][0]
-    let b = state[0][1]
-    let c = state[1][0]
-    let d = state[1][1]
+    let n = numOfFingers;
+    let a = state[0][0];
+    let b = state[0][1];
+    let c = state[1][0];
+    let d = state[1][1];
     // This monster formula's derivation will be documented in readme
-    return (a*n-((a*(a-1))/2)+b-a)*((n*(n+1))/2)+(c*n-(c*(c-1))/2+d-c)
+    return (a*n-((a*(a-1))/2)+b-a)*((n*(n+1))/2)+(c*n-(c*(c-1))/2+d-c);
 }
 
 function indexToState(index){
     // Given a state's index number, returns the state in ((a, b), (c, d)) notation
     // This monster formula's derivation will be documeted in readme
-    return [handSet[Math.floor(index / handSet.length)], handSet[index % handSet.length]]
+    return [handSet[Math.floor(index / handSet.length)], handSet[index % handSet.length]];
 }    
 
 function gameOverState(index){
@@ -142,22 +138,22 @@ function gameOverState(index){
     */
     let state = indexToState(index);
     if (state[0][0] + state[0][1] + state[1][0] + state[1][1] == 0){
-        return 0.5
+        return 0.5;
     } else if (state[0][0] + state[0][1] == 0) {
-        return 0
+        return 0;
     } else if (state[1][0] + state[1][1] == 0) {
-        return 1
+        return 1;
     } else {
-        return -1
+        return -1;
     }
 }
 
 function initializeGraphEdges(){
     //Initializes the graph structures by filling out the children[] and parent[] fields for each state
     for (let stateIndex = 0; stateIndex < stateCount; ++stateIndex){
-        let childrenStates = getChildrenOfState(indexToState(stateIndex))
+        let childrenStates = getChildrenOfState(indexToState(stateIndex));
         childrenStates.forEach(childState => {
-            let childIndex = stateToIndex(childState)
+            let childIndex = stateToIndex(childState);
             if (!parents[childIndex].includes(stateIndex)) {parents[childIndex].push(stateIndex);}
             if (!children[stateIndex].includes(childIndex)) {children[stateIndex].push(childIndex);}
         });
@@ -175,7 +171,7 @@ function getChildrenOfState(parentState){
     Returns:
         A list of states that are immediate children of {parentState}. May be empty.
     */
-    let childStates = []
+    let childStates = [];
     let attackStates = getAllAttackStates(parentState)
     // If there were no attack states, our opponent has 
     // no hands left to attack, so they lost the game.
@@ -208,7 +204,7 @@ function getAllAttackStates(state) {
         A list of states that can be reached from {state} by attacking the opponent. 
         May be empty.
     */
-    let attackStates = []
+    let attackStates = [];
     for (let playerHand = 0; playerHand < 2; ++playerHand) { // for each hand the player has,
         if (state[0][playerHand]) { // if it is not zero (i.e. they can attack with it)
             for (let oppHand = 0; oppHand < 2; ++oppHand) { // for each of the opponent's hands
@@ -220,9 +216,9 @@ function getAllAttackStates(state) {
                     // then the other hand should come first
                     // Note: 1-oppHand is the other hand of the opponent
                     if (newValue > state[1][1-oppHand]){
-                        attackStates.push([[state[1][1-oppHand], newValue], state[0]])
+                        attackStates.push([[state[1][1-oppHand], newValue], state[0]]);
                     }else{
-                        attackStates.push([[newValue, state[1][1-oppHand]], state[0]])
+                        attackStates.push([[newValue, state[1][1-oppHand]], state[0]]);
                     }
                 }
             }
@@ -243,8 +239,8 @@ function getAllSwitchStates(state){
         A list of states that can be reached from {state} by switching. 
         May be empty.
     */
-    let switchStates = []
-    let sum = state[0][0] + state[0][1]
+    let switchStates = [];
+    let sum = state[0][0] + state[0][1];
     for (let i = 0; i < handSet.length; ++i){
         if(handSet[i][0] + handSet[i][1] == sum){
             if(skippingAllowed | handSet[i] != state[0]){
@@ -267,7 +263,7 @@ function classifyStates(){
     1) End States - The leaves of the graph, where a player wins
     2) Indeterminate States - States with no path to a End State
     3) Guaranteed States - States with a guaranteed path to an End State where a player wins
-    4) General States - States with many potential paths
+    4) General States - States with many potential paths (so, none of the above)
 
     Fills out the classifiedStates field with a list of 0's, 1's, 0.5's and -1's:
     0 means the state with that index is either an end state or guaranteed state where the
@@ -280,23 +276,23 @@ function classifyStates(){
     This function does not return anything, instead it stores it's results
     in the classifiedStates field
     */
-    let statesToClassify = []
-    let output = Array(stateCount).fill(0.5)
+    let statesToClassify = [];
+    let output = Array(stateCount).fill(0.5);
 
     for (let i = 1; i < stateCount; ++i){
         if (children[i].length == 0){
             output[i] = gameOverState(i);
             parents[i].forEach(parent => {
                 statesToClassify.push(parent);
-            })
+            });
         }
     }
 
     for (let limit = 0; limit < 1000 & statesToClassify.length > 0; ++limit) {
-        let currState = statesToClassify.shift()
-        let originalValue = output[currState]
-        let guaranteedLoss = true
-        let guaranteedWin = false
+        let currState = statesToClassify.shift();
+        let originalValue = output[currState];
+        let guaranteedLoss = true;
+        let guaranteedWin = false;
         children[currState].forEach(child => {
             if (output[child] != 1){
                 guaranteedLoss = false;
@@ -304,7 +300,7 @@ function classifyStates(){
             if (output[child] == 0){
                 guaranteedWin = true;
             }
-        })
+        });
         if (guaranteedWin) {
             output[currState] = 1;
         } else if (guaranteedLoss) {
@@ -318,7 +314,7 @@ function classifyStates(){
                 if (!statesToClassify.includes(parent)){
                     statesToClassify.push(parent);
                 }
-            })
+            });
         }
     }
     classifiedStates = output;
@@ -337,8 +333,8 @@ function computeRanks(){
     This function does not return anything, instead it stores it's results
     in the ranks field
     */
-    let mat = zeros(stateCount, stateCount, 'sparse')
-    let solution = zeros(stateCount)
+    let mat = zeros(stateCount, stateCount, 'sparse');
+    let solution = zeros(stateCount);
     // assign the rest of the states a value here:
     for (let stateIndex = 0; stateIndex < stateCount; ++stateIndex){
         if (classifiedStates[stateIndex] != -1) {
@@ -349,7 +345,7 @@ function computeRanks(){
             solution.set([stateIndex], children[stateIndex].length);
             children[stateIndex].forEach(child => {
                 mat.set([stateIndex, child], 1);
-            })
+            });
         }
     }
     ranks = lusolve(mat, solution);
